@@ -160,4 +160,17 @@ const endgame = function (msg) {
     alert(msg)
     gameOver= true;
 
+    const cells = document.querySelectorAll('.cell')
+
+    for(let i=0; i < cells.length; i++){
+         const cell = cells[i]
+       
+         const cellNums = parseInt(cell.innerText)
+        if(bombs.includes(cellNums)) {
+
+            cell.classList.add('cell-bomb')
+        }
+
+    }
+
 }
