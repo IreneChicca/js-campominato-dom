@@ -45,7 +45,7 @@ btnGreed.addEventListener('click', function () {
     freeCells = cellTotal - bombs.length;
 
 
-   
+  
 
 })
 
@@ -68,10 +68,32 @@ function generateCell(cellText, cellTotal) {
     // assegno classe alla cella così da poter modificare lo stile della cella in css
     cell.classList.add('cell-' + cellTotal);
 
+
+
+    // CLICK DELLA CELLA
+
     //faccio colorare le celle al click
     cell.addEventListener('click', function () {
-        cell.classList.add('cell-style')
-        console.log(this.innerText)
+        
+        
+
+        // determino se la cella cliccata è una bomba
+
+        const cellNumber = parseInt(this.innerText);
+        if(bombs.includes(cellNumber)){
+
+            this.classList.add('cell-bomb')
+            console.log(this)
+            alert('fine partita!')
+        }
+
+        else {
+
+            this.classList.add('cell-style')
+            score++;
+            console.log(this.innerText)
+            console.log(bombs)
+        }
     });
 
     // INSERISCO/APPENDO LA CELLA ALL'INTERNO DELLA PAGINA

@@ -33,3 +33,10 @@
 
     width: calc(100% / 7)
 }
+
+
+.cell-bomb{
+
+    background-color: red;
+
+}
