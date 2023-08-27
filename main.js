@@ -84,7 +84,7 @@ function generateCell(cellText, cellTotal) {
 
             this.classList.add('cell-bomb')
            
-            alert('Fine partita! Hai totalizzato '+score+' punti :( Hai perso..')
+            endgame('Fine partita! Hai totalizzato '+score+' punti :( Hai perso..');
         }
 
         else {
@@ -94,7 +94,7 @@ function generateCell(cellText, cellTotal) {
             
             if( score >= freeCells){
 
-                alert('Perfect! Hai totalizzato '+score+' punti (: HAI VINTO')
+                endgame('Perfect! Hai totalizzato '+score+' punti (: HAI VINTO');
             }
 
         }
@@ -147,4 +147,14 @@ const bombsArray = [];
  }
 
  return bombsArray;
+}
+
+
+
+// GENERO FUNZIONE PER LA FINE DEL GAME
+
+const endgame = function (msg) {
+
+    alert(msg)
+
 }
