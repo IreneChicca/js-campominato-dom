@@ -83,16 +83,20 @@ function generateCell(cellText, cellTotal) {
         if(bombs.includes(cellNumber)){
 
             this.classList.add('cell-bomb')
-            console.log(this)
-            alert('fine partita!')
+           
+            alert('Fine partita! Hai totalizzato '+score+' punti :( Hai perso..')
         }
 
         else {
 
             this.classList.add('cell-style')
             score++;
-            console.log(this.innerText)
-            console.log(bombs)
+            
+            if( score >= freeCells){
+
+                alert('Perfect! Hai totalizzato '+score+' punti (: HAI VINTO')
+            }
+
         }
     });
 
