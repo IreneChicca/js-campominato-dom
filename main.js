@@ -10,7 +10,7 @@ let cellTotal;
 let bombs;
 let score;
 let freeCells;
-
+let gameOver;
 
 
 // RICHIAMO LA FUNZIONE CHE GENERA LA GRIGLIA ON LOAD
@@ -23,6 +23,8 @@ let freeCells;
 // collego al bottone la creazione della griglia
 
 btnGreed.addEventListener('click', function () {
+
+    gameOver= false;
 
     //raccolgo l'informazione della difficoltà selezionata dall'utente e la utilizzo per generare il numero di celle relativo
     cellTotal = parseInt(difficultySelect.value);
@@ -75,7 +77,7 @@ function generateCell(cellText, cellTotal) {
     //faccio colorare le celle al click
     cell.addEventListener('click', function () {
         
-        
+        if(gameOver == true) return;
 
         // determino se la cella cliccata è una bomba
 
@@ -156,5 +158,6 @@ const bombsArray = [];
 const endgame = function (msg) {
 
     alert(msg)
+    gameOver= true;
 
 }
