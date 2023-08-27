@@ -28,14 +28,9 @@ btnGreed.addEventListener('click', function () {
 
     // creo l'array di bombe
 
-    const bombs = [];
+    const bombs = generateBombsArray(1, cellTotal, 16);
 
-    while (bombs.length <16) {
-
-       const bomb = generateNumber(1,cellTotal);
-        if(!bombs.includes(bomb)) {bombs.push(bomb)}
-
-    }
+   
 
 })
 
@@ -95,3 +90,16 @@ const generateNumber = function (min,max){
 }
 
 
+// GENERA ARRAY DELLE BOMBE
+
+const generateBombsArray = function(min,max,qty){
+
+const bombsArray = [];
+
+    while (bombsArray.length < qty) {
+
+    const bomb = generateNumber(min,max);
+     if(!bombsArray.includes(bomb)) {bombsArray.push(bomb)}
+
+ }
+}
