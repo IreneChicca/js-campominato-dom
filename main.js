@@ -4,6 +4,12 @@ const cellContainer = document.getElementById('cell-container');
 const btnGreed = document.getElementById('grid-btn');
 const difficultySelect = document.getElementById('difficulty');
 
+// VARIABILI GLOBALI di score e cells
+
+let cellTotal;
+let bombs;
+let score;
+let freeCells;
 
 
 
@@ -19,7 +25,7 @@ const difficultySelect = document.getElementById('difficulty');
 btnGreed.addEventListener('click', function () {
 
     //raccolgo l'informazione della difficoltà selezionata dall'utente e la utilizzo per generare il numero di celle relativo
-    let cellTotal = parseInt(difficultySelect.value);
+    cellTotal = parseInt(difficultySelect.value);
 
 
     //richiamo la funzione che genera la griglia con le celle
@@ -28,17 +34,17 @@ btnGreed.addEventListener('click', function () {
 
     // creo l'array di bombe
 
-    const bombs = generateBombsArray(1, cellTotal, 16);
+    bombs = generateBombsArray(1, cellTotal, 16);
 
     // inizializzo punteggio
 
-    let score = 0;
+    score = 0;
 
     // creo variabile con il conteggio delle celle libere, dato dalla sottrazione delle totali - le bombe presenti sul campo
 
-    let freeCells = cellTotal - bombs.length;
+    freeCells = cellTotal - bombs.length;
 
-    
+
    
 
 })
