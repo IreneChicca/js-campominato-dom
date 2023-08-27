@@ -6,6 +6,7 @@ const difficultySelect = document.getElementById('difficulty');
 
 
 
+
 // RICHIAMO LA FUNZIONE CHE GENERA LA GRIGLIA ON LOAD
 
 // generateGrid(cellTotal, cellContainer);
@@ -23,7 +24,21 @@ btnGreed.addEventListener('click', function () {
 
     //richiamo la funzione che genera la griglia con le celle
     generateGrid();
+
+
+    // creo l'array di bombe
+
+    const bombs = [];
+
+    while (bombs.length <16) {
+
+       const bomb = generateNumber(1,cellTotal);
+        if(!bombs.includes(bomb)) {bombs.push(bomb)}
+
+    }
+
 })
+
 
 
 // CREO UNA FUNZIONE E LA COLLEGO AL CICLO CHE GENERA LE CELLE
@@ -71,6 +86,12 @@ function generateGrid() {
 }
 
 
+// GENERA NUMERO RANDOMICO
 
+const generateNumber = function (min,max){
+
+    return Math.floor(Math.random() * max - min + 1) + min;
+
+}
 
 
