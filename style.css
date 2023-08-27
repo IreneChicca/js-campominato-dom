@@ -1,0 +1,35 @@
+.cell {
+    color: white;
+    list-style-type: none;
+    border: 2px solid white;
+    width: 10%;
+    aspect-ratio: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+.cell-style {
+    background-color: aquamarine;
+    color: darkblue;
+
+}
+
+
+.cell-100 {
+    width: 10%;
+
+}
+
+
+.cell-81 {
+
+    width: calc(100% / 9)
+}
+
+.cell-49 {
+
+    width: calc(100% / 7)
+}
