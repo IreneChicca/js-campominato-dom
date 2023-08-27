@@ -30,10 +30,21 @@ btnGreed.addEventListener('click', function () {
 
     const bombs = generateBombsArray(1, cellTotal, 16);
 
+    // inizializzo punteggio
+
+    let score = 0;
+
+    // creo variabile con il conteggio delle celle libere, dato dalla sottrazione delle totali - le bombe presenti sul campo
+
+    let freeCells = cellTotal - bombs.length;
+
+    
    
 
 })
 
+
+    
 
 
 // CREO UNA FUNZIONE E LA COLLEGO AL CICLO CHE GENERA LE CELLE
@@ -102,4 +113,6 @@ const bombsArray = [];
      if(!bombsArray.includes(bomb)) {bombsArray.push(bomb)}
 
  }
+
+ return bombsArray;
 }
